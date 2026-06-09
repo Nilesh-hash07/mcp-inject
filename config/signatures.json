@@ -1,0 +1,112 @@
+{
+  "version": "2.0",
+  "description": "Detection signatures for MCP injection vulnerabilities",
+  "signatures": [
+    {
+      "category": "command_injection",
+      "patterns": [
+        "root:x:", "uid=", "gid=", "groups=", "/bin/", "/usr/bin/",
+        "$PATH", "$HOME", "$USER", "whoami", "id=", "pwd:",
+        "command not found", "permission denied", "no such file",
+        "cannot execute", "sh:", "bash:", "zsh:", "dash:"
+      ],
+      "severity": "critical",
+      "confidence": "high"
+    },
+    {
+      "category": "sql_injection",
+      "patterns": [
+        "SQL syntax", "mysql_fetch", "ORA-", "PostgreSQL", "SQLite",
+        "unclosed quotation", "Microsoft OLE DB", "ODBC Driver",
+        "SQL Server", "You have an error in your SQL",
+        "Warning: mysql_", "PDOException", "supplied argument is not a valid MySQL"
+      ],
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "category": "template_injection",
+      "patterns": [
+        "__class__", "__mro__", "__subclasses__", "__builtins__",
+        "os._wrap_close", "subprocess.Popen", "eval(", "exec(",
+        "{{", "}}", "${", "}", "#{", "}"
+      ],
+      "severity": "critical",
+      "confidence": "high"
+    },
+    {
+      "category": "path_traversal",
+      "patterns": [
+        "root:", "daemon:", "bin:", "nologin", "/etc/passwd",
+        "[fonts]", "[extensions]", "[mci extensions]", "boot.ini"
+      ],
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "category": "ssrf",
+      "patterns": [
+        "169.254.169.254", "metadata", "instance-id", "ami-id",
+        "localhost", "127.0.0.1", "internal", "10.0.", "172.16.", "192.168."
+      ],
+      "severity": "high",
+      "confidence": "medium"
+    },
+    {
+      "category": "xxe",
+      "patterns": [
+        "DOCTYPE", "ENTITY", "SYSTEM", "file://", "xml",
+        "XML Parsing Error", "DOMException", "parser error"
+      ],
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "category": "nosql_injection",
+      "patterns": [
+        "$ne", "$gt", "$regex", "$where", "$lookup",
+        "MongoError", "MongooseError", "CastError"
+      ],
+      "severity": "high",
+      "confidence": "medium"
+    },
+    {
+      "category": "ldap_injection",
+      "patterns": [
+        "LDAPException", "javax.naming.NameNotFoundException",
+        "LDAP search", "uid=", "dc=", "cn=", "ou="
+      ],
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "category": "el_injection",
+      "patterns": [
+        "${", "#{", "Runtime.getRuntime", "System.getProperty",
+        "javax.el.ELException"
+      ],
+      "severity": "critical",
+      "confidence": "high"
+    },
+    {
+      "category": "ssi",
+      "patterns": [
+        "<!--#", "#exec", "#include", "#echo", "#config",
+        "XSSI", "SSI command"
+      ],
+      "severity": "critical",
+      "confidence": "high"
+    }
+  ],
+  "timing_analysis": {
+    "enabled": true,
+    "baseline_samples": 10,
+    "multiplier": 3,
+    "min_delay_seconds": 2
+  },
+  "differential_analysis": {
+    "enabled": true,
+    "min_length_diff_percent": 50,
+    "min_content_diff_percent": 30
+  }
+}

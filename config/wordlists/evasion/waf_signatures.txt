@@ -1,0 +1,31 @@
+union all select
+union select
+select from
+information_schema
+pg_sleep
+benchmark
+waitfor delay
+xp_cmdshell
+exec sp_executesql
+exec master.dbo.xp_cmdshell
+os.system
+subprocess.call
+eval(
+exec(
+system(
+passthru(
+shell_exec(
+popen(
+Runtime.getRuntime(
+ProcessBuilder
+new ProcessBuilder
+FileInputStream
+FileOutputStream
+/etc/passwd
+C:\\Windows\\win.ini
+../../
+..\\..\\
+..%2f..%2f
+..%5c..%5c
+../../../../etc/passwd
+..\\..\\..\\..\\windows\\win.ini

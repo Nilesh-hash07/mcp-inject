@@ -1,0 +1,94 @@
+{
+  "version": "2.0",
+  "description": "CVE report templates for discovered vulnerabilities",
+  "templates": [
+    {
+      "category": "command_injection",
+      "cve_id": "CVE-2024-XXXXX",
+      "title": "Command Injection Vulnerability in MCP Server",
+      "description": "The MCP server fails to sanitize user input before passing it to system commands, allowing attackers to execute arbitrary commands.",
+      "impact": "Critical - Remote Code Execution",
+      "cvss_score": 9.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "remediation": "Use parameterized commands, validate input against allowlist, avoid system() calls",
+      "references": ["https://owasp.org/www-community/attacks/Command_Injection"]
+    },
+    {
+      "category": "sql_injection",
+      "cve_id": "CVE-2024-YYYYY",
+      "title": "SQL Injection Vulnerability in MCP Server",
+      "description": "The MCP server improperly handles user input in database queries, allowing SQL injection attacks.",
+      "impact": "Critical - Data Breach",
+      "cvss_score": 9.1,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "remediation": "Use parameterized queries or prepared statements",
+      "references": ["https://owasp.org/www-community/attacks/SQL_Injection"]
+    },
+    {
+      "category": "template_injection",
+      "cve_id": "CVE-2024-ZZZZZ",
+      "title": "Server-Side Template Injection in MCP Server",
+      "description": "The MCP server evaluates user input as template code without proper sanitization.",
+      "impact": "Critical - Remote Code Execution",
+      "cvss_score": 9.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "remediation": "Disable template engine access to dangerous classes, sanitize user input",
+      "references": ["https://owasp.org/www-community/attacks/Server_Side_Template_Injection"]
+    },
+    {
+      "category": "path_traversal",
+      "cve_id": "CVE-2024-AAAAA",
+      "title": "Path Traversal Vulnerability in MCP Server",
+      "description": "The MCP server fails to validate file paths, allowing attackers to read arbitrary files.",
+      "impact": "High - Information Disclosure",
+      "cvss_score": 7.5,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "remediation": "Normalize paths, restrict to whitelisted directories, use chroot",
+      "references": ["https://owasp.org/www-community/attacks/Path_Traversal"]
+    },
+    {
+      "category": "ssrf",
+      "cve_id": "CVE-2024-BBBBB",
+      "title": "Server-Side Request Forgery in MCP Server",
+      "description": "The MCP server allows attackers to make arbitrary HTTP requests.",
+      "impact": "High - Internal Network Scanning",
+      "cvss_score": 7.2,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "remediation": "Implement whitelist of allowed URLs, disable schema other than HTTP/HTTPS",
+      "references": ["https://owasp.org/www-community/attacks/Server_Side_Request_Forgery"]
+    },
+    {
+      "category": "xxe",
+      "cve_id": "CVE-2024-CCCCC",
+      "title": "XML External Entity Injection in MCP Server",
+      "description": "The MCP server processes XML input with external entity resolution enabled.",
+      "impact": "High - Information Disclosure",
+      "cvss_score": 7.1,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "remediation": "Disable DTD processing, use secure XML parsers",
+      "references": ["https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing"]
+    },
+    {
+      "category": "nosql_injection",
+      "cve_id": "CVE-2024-DDDDD",
+      "title": "NoSQL Injection in MCP Server",
+      "description": "The MCP server fails to sanitize JSON input, allowing NoSQL injection attacks.",
+      "impact": "High - Authentication Bypass",
+      "cvss_score": 8.1,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "remediation": "Validate and sanitize all JSON input, use parameterized queries",
+      "references": ["https://owasp.org/www-community/attacks/NoSQL_Injection"]
+    },
+    {
+      "category": "ldap_injection",
+      "cve_id": "CVE-2024-EEEEE",
+      "title": "LDAP Injection in MCP Server",
+      "description": "The MCP server fails to escape LDAP search filters.",
+      "impact": "High - Authentication Bypass",
+      "cvss_score": 8.1,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "remediation": "Escape LDAP special characters, use parameterized LDAP queries",
+      "references": ["https://owasp.org/www-community/attacks/LDAP_Injection"]
+    }
+  ]
+}

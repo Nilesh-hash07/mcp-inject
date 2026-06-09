@@ -1,0 +1,9 @@
+sleep 5
+ping -c 5 127.0.0.1
+timeout 5
+/bin/sleep 5
+python3 -c 'import time; time.sleep(5)'
+perl -e 'sleep(5)'
+ruby -e 'sleep(5)'
+php -r 'sleep(5);'
+powershell -c "Start-Sleep -Seconds 5"
