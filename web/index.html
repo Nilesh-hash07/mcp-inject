@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Injection Scanner - Report Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MCP Injection Scanner</h1>
+            <p>Interactive Vulnerability Report Viewer</p>
+        </header>
+
+        <div class="upload-section">
+            <h2>Load Report</h2>
+            <input type="file" id="reportFile" accept=".json">
+            <button id="loadBtn">Load Report</button>
+        </div>
+
+        <div id="reportContent" class="report-content">
+            <div class="placeholder">
+                Select a JSON report file to view results
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const reportFile = document.getElementById('reportFile');
+        const loadBtn = document.getElementById('loadBtn');
+        const reportContent = document.getElementById('reportContent');
+
+        loadBtn.addEventListener('click', () => {
+            if (!reportFile.files[0]) {
+                alert('Please select a JSON report file');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    renderReport(data);
+                } catch (err) {
+                    alert('Invalid JSON file: ' + err.message);
+                }
+            };
+            reader.readAsText(reportFile.files[0]);
+        });
+
+        function renderReport(data) {
+            let html = '';
+
+            // Header
+            html += `<div class="report-header">
+                        <h2>Scan Report</h2>
+                        <p><strong>Target:</strong> ${escapeHtml(data.metadata?.target || 'Unknown')}</p>
+                        <p><strong>Timestamp:</strong> ${escapeHtml(data.metadata?.timestamp || 'Unknown')}</p>
+                        <p><strong>Tool:</strong> ${escapeHtml(data.metadata?.tool)} ${escapeHtml(data.metadata?.version)}</p>
+                    </div>`;
+
+            // Summary
+            const summary = data.summary || {};
+            html += `<div class="summary-section">
+                        <h3>Summary</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value">${summary.total_payloads || 0}</div>
+                                <div class="stat-label">Total Payloads</div>
+                            </div>
+                            <div class="stat-card critical">
+                                <div class="stat-value">${summary.severity_breakdown?.critical || 0}</div>
+                                <div class="stat-label">Critical</div>
+                            </div>
+                            <div class="stat-card high">
+                                <div class="stat-value">${summary.severity_breakdown?.high || 0}</div>
+                                <div class="stat-label">High</div>
+                            </div>
+                            <div class="stat-card medium">
+                                <div class="stat-value">${summary.severity_breakdown?.medium || 0}</div>
+                                <div class="stat-label">Medium</div>
+                            </div>
+                            <div class="stat-card low">
+                                <div class="stat-value">${summary.severity_breakdown?.low || 0}</div>
+                                <div class="stat-label">Low</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">${summary.scan_duration_seconds?.toFixed(2) || 0}</div>
+                                <div class="stat-label">Duration (sec)</div>
+                            </div>
+                        </div>
+                    </div>`;
+
+            // Findings
+            const findings = data.findings || [];
+            if (findings.length > 0) {
+                html += `<div class="findings-section">
+                            <h3>Vulnerabilities Found (${findings.length})</h3>`;
+                
+                findings.forEach((finding, idx) => {
+                    const severityClass = finding.severity?.toLowerCase() || 'info';
+                    html += `<div class="finding-card ${severityClass}">
+                                <div class="finding-header">
+                                    <span class="finding-id">[${escapeHtml(finding.id)}]</span>
+                                    <span class="finding-name">${escapeHtml(finding.name)}</span>
+                                    <span class="severity-badge ${severityClass}">${escapeHtml(finding.severity)}</span>
+                                </div>
+                                <div class="finding-details">
+                                    <p><strong>Category:</strong> ${escapeHtml(finding.category)}</p>
+                                    <p><strong>Confidence:</strong> ${escapeHtml(finding.confidence)}</p>
+                                    <p><strong>Evidence:</strong> ${escapeHtml(finding.evidence)}</p>
+                                    <p><strong>Response Time:</strong> ${finding.response_time_ms?.toFixed(2)} ms</p>
+                                    <p><strong>Response Size:</strong> ${finding.response_size_bytes} bytes</p>
+                                </div>
+                            </div>`;
+                });
+                
+                html += `</div>`;
+            } else {
+                html += `<div class="no-findings">
+                            <h3>No Vulnerabilities Found</h3>
+                            <p>The target appears to be secure against tested injection vectors.</p>
+                        </div>`;
+            }
+
+            reportContent.innerHTML = html;
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+    </script>
+</body>
+</html>

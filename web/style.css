@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #00d4ff;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #00d4ff;
+    font-size: 2.5em;
+}
+
+header p {
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Upload Section */
+.upload-section {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.upload-section h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.upload-section input[type="file"] {
+    background: #0f3460;
+    color: #eee;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.upload-section button {
+    background: #00d4ff;
+    color: #1a1a2e;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.upload-section button:hover {
+    background: #00b8d4;
+}
+
+/* Report Content */
+.report-content {
+    background: #0f0f1a;
+    border-radius: 10px;
+    padding: 25px;
+    min-height: 400px;
+}
+
+.placeholder {
+    text-align: center;
+    color: #666;
+    padding: 50px;
+}
+
+/* Report Header */
+.report-header {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.report-header h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.report-header p {
+    margin: 8px 0;
+    font-family: monospace;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-card {
+    background: #16213e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid #00d4ff;
+}
+
+.stat-card.critical { border-left-color: #dc3545; }
+.stat-card.high { border-left-color: #fd7e14; }
+.stat-card.medium { border-left-color: #ffc107; }
+.stat-card.low { border-left-color: #28a745; }
+
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.85em;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* Findings Section */
+.findings-section h3 {
+    margin: 25px 0 15px 0;
+    color: #00d4ff;
+}
+
+.finding-card {
+    background: #16213e;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-left: 4px solid #666;
+}
+
+.finding-card.critical { border-left-color: #dc3545; }
+.finding-card.high { border-left-color: #fd7e14; }
+.finding-card.medium { border-left-color: #ffc107; }
+.finding-card.low { border-left-color: #28a745; }
+
+.finding-header {
+    background: #1a1a2e;
+    padding: 12px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.finding-id {
+    font-family: monospace;
+    color: #888;
+    font-size: 0.85em;
+}
+
+.finding-name {
+    font-weight: bold;
+    flex: 1;
+}
+
+.severity-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.severity-badge.critical { background: #dc3545; color: white; }
+.severity-badge.high { background: #fd7e14; color: white; }
+.severity-badge.medium { background: #ffc107; color: #1a1a2e; }
+.severity-badge.low { background: #28a745; color: white; }
+
+.finding-details {
+    padding: 15px;
+    border-top: 1px solid #0f3460;
+}
+
+.finding-details p {
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+.finding-details p strong {
+    color: #00d4ff;
+    width: 120px;
+    display: inline-block;
+}
+
+/* No Findings */
+.no-findings {
+    text-align: center;
+    padding: 50px;
+    background: #16213e;
+    border-radius: 10px;
+}
+
+.no-findings h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .finding-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .finding-details p strong {
+        width: auto;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
